@@ -37,7 +37,7 @@ export default function InfoPage() {
                 Professional Logs
               </h2>
               
-              <div className="space-y-8 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[1px] before:bg-surface-container-low">
+              <div className="space-y-8 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-surface-container-low">
                 {/* Exp Item 1 */}
                 <div className="relative pl-8">
                   <span className="absolute left-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-primary -translate-x-1/2"></span>
