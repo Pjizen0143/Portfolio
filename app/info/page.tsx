@@ -5,7 +5,7 @@ import React from "react";
 export default function InfoPage() {
   return (
     <div className="min-h-[calc(100vh-80px)] bg-background text-on-background px-5 py-16 sm:px-8">
-      <div className="mx-auto max-w-[1120px]">
+      <div className="mx-auto max-w-280">
         {/* Page Header */}
         <header className="border-b border-surface-container-low pb-8 mb-12">
           <div className="typ-label-mono text-xs text-on-surface-variant uppercase tracking-widest mb-1.5">
