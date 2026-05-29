@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import TerminalLabel from "../ui/TerminalLabel";
 import Button from "../ui/Button";
+import ThemeToggle from "../ui/ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,8 +95,11 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Column 3: Right - Contact button & Responsive Hamburger Toggle */}
+        {/* Column 3: Right - Theme Switcher, Contact & Mobile Toggle */}
         <div className="flex-1 flex justify-end items-center gap-3">
+          {/* Theme Switching Component */}
+          <ThemeToggle />
+
           {/* Contact Button (Remains constant across all screens) */}
           <Link href="/contact" className="z-10">
             <Button 

@@ -18,6 +18,19 @@
   --spacing-container-max: 1120px;
 }
 
+.dark {
+  /* Core Main Colors (Dark Mode Slate Paper) */
+  --background: #0f1115;
+  --on-background: #e1e2e4;
+  --surface-container-lowest: #14161a;
+  --surface-container-low: #1c1e22;
+  --surface-container-highest: #2b2e34;
+  --primary: #ffffff;
+  --on-primary: #000000;
+  --error: #ffb4ab;
+  --on-surface-variant: #a1a3a9;
+}
+
 @theme {
   /* Mappings for Tailwind CSS */
   --color-background: var(--background);
@@ -65,6 +78,7 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Typography Base Overrides & Classes */
