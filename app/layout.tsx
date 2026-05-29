@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/shared/Navbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,6 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "ApexTask — Premium Task Planner",
+  description: "A gorgeous, highly-interactive, responsive dashboard workspace designed for modern workflow productivity.",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,7 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-text">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
