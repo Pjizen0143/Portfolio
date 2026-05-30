@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import GithubIcon from "@/components/ui/GithubIcon";
+import LinkedinIcon from "@/components/ui/LinkedinIcon";
 
 export default function HeroSection() {
   return (
@@ -14,7 +16,7 @@ export default function HeroSection() {
         </div>
 
         <h1 className="typ-display text-primary leading-tight mb-2">
-          Thanaphat Poolthrap&apos;s
+          Thanaphat Poolthrap
           <br />
         </h1>
         <h2 className="typ-h2 text-on-surface-variant ml-2 mb-6">
@@ -27,6 +29,31 @@ export default function HeroSection() {
           Currently, I&apos;m focused on improving my backend development,
           system design, and problem-solving skills.
         </p>
+
+        {/* Social Connections */}
+        <div className="flex items-center gap-4 ml-2 animate-fade-in">
+          {/* LinkedIn (href blank as requested, will be updated later) */}
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 border border-surface-container-low rounded bg-surface-container-lowest/30 hover:bg-surface-container-low text-on-surface-variant hover:text-primary transition-all duration-300 shadow-sm active:scale-95 group"
+            aria-label="LinkedIn Profile"
+          >
+            <LinkedinIcon className="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110" />
+          </a>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/Pjizen0143"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 border border-surface-container-low rounded bg-surface-container-lowest/30 hover:bg-surface-container-low text-on-surface-variant hover:text-primary transition-all duration-300 shadow-sm active:scale-95 group"
+            aria-label="GitHub Profile"
+          >
+            <GithubIcon className="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110" />
+          </a>
+        </div>
       </div>
     </section>
   );
