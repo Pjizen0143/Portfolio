@@ -17,19 +17,32 @@ export default function Navbar() {
     if (pathname !== "/") return;
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3; // Checks the upper-third focal point of viewport
-
       const indexEl = document.getElementById("index");
+      const skillsEl = document.getElementById("skills");
       const projectsEl = document.getElementById("projects");
       const infoEl = document.getElementById("info");
 
-      if (infoEl && scrollPosition >= infoEl.offsetTop) {
-        setActiveSection("info");
-      } else if (projectsEl && scrollPosition >= projectsEl.offsetTop) {
-        setActiveSection("projects");
-      } else {
-        setActiveSection("index");
+      const sections = [
+        { id: "info", el: infoEl },
+        { id: "projects", el: projectsEl },
+        { id: "skills", el: skillsEl },
+        { id: "index", el: indexEl },
+      ];
+
+      const threshold = window.innerHeight / 3;
+      let currentSection = "index";
+
+      for (const section of sections) {
+        if (section.el) {
+          const rect = section.el.getBoundingClientRect();
+          if (rect.top <= threshold) {
+            currentSection = section.id;
+            break;
+          }
+        }
       }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -72,6 +85,16 @@ export default function Navbar() {
             }`}
           >
             Index
+          </Link>
+          <Link 
+            href="/#skills" 
+            className={`typ-label-mono text-xs uppercase tracking-wider relative py-1 transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all duration-300 ${
+              isLinkActive("skills", "/")
+                ? "text-primary font-bold after:w-full"
+                : "text-on-surface-variant hover:text-primary after:w-0 hover:after:w-full"
+            }`}
+          >
+            Skills
           </Link>
           <Link 
             href="/#projects" 
@@ -155,6 +178,17 @@ export default function Navbar() {
             01 / INDEX
           </Link>
           <Link 
+            href="/#skills" 
+            onClick={() => setIsOpen(false)}
+            className={`typ-label-mono text-sm uppercase tracking-widest py-2 border-b transition-all duration-200 ${
+              isLinkActive("skills", "/skills")
+                ? "text-primary font-bold border-primary border-b-2"
+                : "text-on-surface-variant hover:text-primary border-surface-container-low"
+            }`}
+          >
+            02 / SKILLS
+          </Link>
+          <Link 
             href="/#projects" 
             onClick={() => setIsOpen(false)}
             className={`typ-label-mono text-sm uppercase tracking-widest py-2 border-b transition-all duration-200 ${
@@ -163,7 +197,7 @@ export default function Navbar() {
                 : "text-on-surface-variant hover:text-primary border-surface-container-low"
             }`}
           >
-            02 / PROJECTS
+            03 / PROJECTS
           </Link>
           <Link 
             href="/#info" 
@@ -174,7 +208,7 @@ export default function Navbar() {
                 : "text-on-surface-variant hover:text-primary border-surface-container-low"
             }`}
           >
-            03 / INFO
+            04 / INFO
           </Link>
         </div>
       )}
