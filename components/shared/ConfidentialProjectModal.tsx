@@ -18,12 +18,15 @@ export default function ConfidentialProjectModal({
   // Tab key handler for keyboard focus trapping inside the modal
   const handleTabKey = (e: KeyboardEvent) => {
     if (!modalRef.current) return;
-    
+
     const focusable = Array.from(
       modalRef.current.querySelectorAll<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      )
-    ).filter(el => !el.hasAttribute('disabled') && el.getAttribute('tabindex') !== '-1');
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      ),
+    ).filter(
+      (el) =>
+        !el.hasAttribute("disabled") && el.getAttribute("tabindex") !== "-1",
+    );
 
     if (focusable.length === 0) return;
 
@@ -56,7 +59,7 @@ export default function ConfidentialProjectModal({
 
     // Focus on the first focusable element inside the modal
     const focusable = modalRef.current?.querySelectorAll<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
     );
     if (focusable && focusable.length > 0) {
       focusable[0].focus();
@@ -85,21 +88,21 @@ export default function ConfidentialProjectModal({
   if (!open) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-100 flex items-center justify-center p-5"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
       {/* Dark semi-transparent backdrop */}
-      <div 
+      <div
         className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Modal Dialog Content Panel */}
-      <div 
+      <div
         ref={modalRef}
         className="relative w-full max-w-lg bg-surface-container-lowest border-2 border-surface-container-highest rounded p-6 sm:p-8 shadow-level-1 animate-slide-in focus:outline-none transition-all duration-300 z-10"
         tabIndex={-1}
@@ -124,8 +127,8 @@ export default function ConfidentialProjectModal({
         </div>
 
         {/* Modal Title */}
-        <h2 
-          id="modal-title" 
+        <h2
+          id="modal-title"
           className="typ-h2 text-primary mb-4 flex items-center gap-2"
         >
           Confidential Project
@@ -137,29 +140,32 @@ export default function ConfidentialProjectModal({
             This project was developed as part of a company-related initiative.
           </p>
           <p>
-            Due to confidentiality and intellectual property restrictions, source code and implementation details cannot be publicly disclosed.
+            Due to confidentiality and intellectual property restrictions,
+            source code and implementation details cannot be publicly disclosed.
           </p>
           <p>
-            If you would like to learn more about my role, responsibilities, technical challenges, or experience working on this project, please feel free to contact me directly.
+            If you would like to learn more about my role, responsibilities,
+            technical challenges, or experience working on this project, please
+            feel free to contact me directly.
           </p>
         </div>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row justify-end gap-3 font-mono">
-          <Button 
-            variant="secondary" 
+          <Button
+            variant="secondary"
             onClick={onClose}
             className="uppercase text-xs tracking-wider px-5 py-2.5 order-2 sm:order-1"
           >
             CLOSE
           </Button>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             onClick={onClose}
             className="order-1 sm:order-2"
           >
-            <Button 
-              variant="primary" 
+            <Button
+              variant="primary"
               className="w-full uppercase text-xs tracking-wider px-5 py-2.5"
             >
               CONTACT_ME

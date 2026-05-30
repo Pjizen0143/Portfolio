@@ -28,11 +28,10 @@ export default function ContactPage() {
           <div className="typ-label-mono text-xs text-on-surface-variant uppercase tracking-widest mb-1.5">
             Registry / Communication
           </div>
-          <h1 className="typ-h1 text-primary">
-            Initialize Contact
-          </h1>
+          <h1 className="typ-h1 text-primary">Initialize Contact</h1>
           <p className="typ-body-lg text-on-surface-variant mt-2 max-w-2xl">
-            Have a project inquiry, design critique, or simple greeting? Compile your transmission log below.
+            Have a project inquiry, design critique, or simple greeting? Compile
+            your transmission log below.
           </p>
         </header>
 
@@ -48,9 +47,10 @@ export default function ContactPage() {
                   Log Committed Successfully
                 </h2>
                 <p className="typ-body-md text-on-surface-variant mb-6">
-                  Thank you. Your message has been saved in our registry. I will review the packet and get back to you shortly.
+                  Thank you. Your message has been saved in our registry. I will
+                  review the packet and get back to you shortly.
                 </p>
-                <Button 
+                <Button
                   variant="secondary"
                   onClick={() => setSubmitted(false)}
                   className="text-xs"
@@ -60,10 +60,12 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
-                
                 {/* Sender Name */}
                 <div className="flex flex-col">
-                  <label htmlFor="contact-name" className="typ-label-mono text-[11px] uppercase text-on-surface-variant mb-2">
+                  <label
+                    htmlFor="contact-name"
+                    className="typ-label-mono text-[11px] uppercase text-on-surface-variant mb-2"
+                  >
                     Sender Name *
                   </label>
                   <input
@@ -79,7 +81,10 @@ export default function ContactPage() {
 
                 {/* Sender Email */}
                 <div className="flex flex-col">
-                  <label htmlFor="contact-email" className="typ-label-mono text-[11px] uppercase text-on-surface-variant mb-2">
+                  <label
+                    htmlFor="contact-email"
+                    className="typ-label-mono text-[11px] uppercase text-on-surface-variant mb-2"
+                  >
                     Sender Email Address *
                   </label>
                   <input
@@ -95,7 +100,10 @@ export default function ContactPage() {
 
                 {/* Packet Message */}
                 <div className="flex flex-col">
-                  <label htmlFor="contact-msg" className="typ-label-mono text-[11px] uppercase text-on-surface-variant mb-2">
+                  <label
+                    htmlFor="contact-msg"
+                    className="typ-label-mono text-[11px] uppercase text-on-surface-variant mb-2"
+                  >
                     Transmission Log Payload *
                   </label>
                   <textarea
@@ -110,18 +118,13 @@ export default function ContactPage() {
                 </div>
 
                 {/* Submit button */}
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="w-full"
-                >
+                <Button variant="primary" type="submit" className="w-full">
                   SEND_TRANSMISSION
                 </Button>
               </form>
             )}
           </div>
         </div>
-
       </div>
     </div>
   );

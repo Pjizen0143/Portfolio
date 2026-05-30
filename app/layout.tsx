@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ApexTask — Premium Task Planner",
-  description: "A gorgeous, highly-interactive, responsive dashboard workspace designed for modern workflow productivity.",
+  description:
+    "A gorgeous, highly-interactive, responsive dashboard workspace designed for modern workflow productivity.",
 };
 
 export default function RootLayout({
