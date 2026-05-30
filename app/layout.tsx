@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ApexTask — Premium Task Planner",
+  title: "Thanaphat Poolthrap - Portfolio",
   description:
-    "A gorgeous, highly-interactive, responsive dashboard workspace designed for modern workflow productivity.",
+    "Welcome to my portfolio! I'm Thanaphat Poolthrap, a Computer Engineering student with a passion for software engineering and backend development. Explore my projects, skills, and experience in the world of technology.",
 };
 
 export default function RootLayout({
