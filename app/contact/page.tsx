@@ -12,8 +12,7 @@ export default function ContactPage() {
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const contactEmail =
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL || "thanaphat.pool@gmail.com";
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
