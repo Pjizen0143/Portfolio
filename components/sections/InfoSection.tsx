@@ -6,104 +6,160 @@ import Button from "@/components/ui/Button";
 
 export default function InfoSection() {
   return (
-    <section 
-      id="info" 
+    <section
+      id="info"
       className="border-t-2 border-surface-container-low py-14 sm:py-16 scroll-mt-20"
     >
+      {" "}
       <div className="mx-auto max-w-280 px-5 sm:px-8">
-        
+        ```
         {/* Section Header */}
         <header className="border-b border-surface-container-low pb-6 mb-10">
           <div className="typ-label-mono text-xs text-on-surface-variant uppercase tracking-widest mb-1.5">
-            Chapter 03 / Professional Log
+            Chapter 03 / Education & Profile
           </div>
-          <h2 className="typ-h1 text-primary">
-            Curriculum Vitae
-          </h2>
+
+          <h2 className="typ-h1 text-primary">Academic Background</h2>
+
+          <p className="typ-body-lg text-on-surface-variant mt-2 max-w-2xl">
+            A brief overview of my education, interests, and current learning
+            focus.
+          </p>
         </header>
-
-        {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
-          {/* Bio Column */}
-          <div className="lg:col-span-8 space-y-6">
-            <h3 className="typ-h2 text-primary border-b border-surface-container-low pb-2">
-              Philosophical Approach
+          {/* Education Timeline */}
+          <div className="lg:col-span-8">
+            <h3 className="typ-h2 text-primary border-b border-surface-container-low pb-2 mb-6">
+              Education
             </h3>
-            <p className="typ-body-lg text-on-background leading-relaxed">
-              I am a front-end architect dedicated to the craft of **Editorial Minimalism**. I believe that user interfaces should behave like carefully typeset physical documents—relying on rhythm, negative space, and typographic scale rather than heavy ornamentation.
-            </p>
-            <p className="typ-body-lg text-on-background leading-relaxed">
-              My practice is focused on structural clarity, performance optimization, and modular craftsmanship. By treating digital surfaces as clean paper and coding with rigorous logic, I build tools that minimize visual noise and enhance cognitive focus.
-            </p>
-            
-            {/* Timeline */}
-            <div className="pt-8">
-              <h3 className="typ-h2 text-primary border-b border-surface-container-low pb-2 mb-6">
-                Professional Logs
-              </h3>
-              
-              <div className="space-y-8 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-surface-container-low">
-                <div className="relative pl-8">
-                  <span className="absolute left-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-primary -translate-x-1/2"></span>
-                  <div className="typ-label-mono text-xs text-on-surface-variant">2024 — CURRENT</div>
-                  <h4 className="typ-body-lg font-bold text-primary mt-1">Lead Interaction Architect</h4>
-                  <p className="typ-body-md text-on-surface-variant mt-1.5 leading-relaxed">
-                    Designed and shipped modular design systems and front-end architectures for lightweight document editing and analytical workspaces.
-                  </p>
+
+            <div className="space-y-8 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-surface-container-low">
+              {/* University */}
+              <div className="relative pl-8">
+                <span className="absolute left-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-primary -translate-x-1/2"></span>
+
+                <div className="typ-label-mono text-xs text-on-surface-variant">
+                  2023 — PRESENT
                 </div>
 
-                <div className="relative pl-8">
-                  <span className="absolute left-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-primary/45 -translate-x-1/2"></span>
-                  <div className="typ-label-mono text-xs text-on-surface-variant">2021 — 2024</div>
-                  <h4 className="typ-body-lg font-bold text-primary mt-1">Software Engineer (Front-End)</h4>
-                  <p className="typ-body-md text-on-surface-variant mt-1.5 leading-relaxed">
-                    Focused on React rendering patterns, TypeScript compiler configurations, and high-performance WebGL canvas utilities.
-                  </p>
+                <h4 className="typ-body-lg font-bold text-primary mt-1">
+                  Computer Engineering
+                </h4>
+
+                <p className="typ-body-md text-on-surface-variant mt-1">
+                  Rangsit University
+                </p>
+
+                <p className="typ-body-md text-on-surface-variant mt-1">
+                  Expected Graduation: 2027
+                </p>
+
+                <p className="typ-body-md text-on-surface-variant mt-1">
+                  GPA: 3.46 / 4.00
+                </p>
+              </div>
+
+              {/* High School */}
+              <div className="relative pl-8">
+                <span className="absolute left-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-primary/50 -translate-x-1/2"></span>
+
+                <div className="typ-label-mono text-xs text-on-surface-variant">
+                  2020 — 2023
                 </div>
+
+                <h4 className="typ-body-lg font-bold text-primary mt-1">
+                  Science & Mathematics Program
+                </h4>
+
+                <p className="typ-body-md text-on-surface-variant mt-1">
+                  Angthong Pitthamaroj Witthayakhom School
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Metadata Column */}
+          {/* Profile Sidebar */}
           <div className="lg:col-span-4">
             <div className="card-paper">
               <h3 className="typ-label-mono text-xs uppercase text-primary border-b border-surface-container-low pb-3 mb-4">
-                CORE_METADATA
+                PROFILE_DATA
               </h3>
 
               <ul className="space-y-4">
                 <li className="flex flex-col">
-                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">PRIMARY_LANGUAGES</span>
-                  <span className="typ-body-md text-primary mt-1 font-semibold">TypeScript, JavaScript, Rust</span>
+                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">
+                    NAME
+                  </span>
+
+                  <span className="typ-body-md text-primary mt-1 font-semibold">
+                    Thanaphat Poolthrap
+                  </span>
                 </li>
+
                 <li className="flex flex-col">
-                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">FRAMEWORKS</span>
-                  <span className="typ-body-md text-primary mt-1 font-semibold">Next.js, React, Tailwind CSS</span>
+                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">
+                    ROLE
+                  </span>
+
+                  <span className="typ-body-md text-primary mt-1 font-semibold">
+                    Computer Engineering Student
+                  </span>
                 </li>
+
                 <li className="flex flex-col">
-                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">SPECIALTIES</span>
-                  <span className="typ-body-md text-primary mt-1 font-semibold">Design Systems, CSS Architectures, Performance Auditing</span>
+                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">
+                    GPA
+                  </span>
+
+                  <span className="typ-body-md text-primary mt-1 font-semibold">
+                    3.46 / 4.00
+                  </span>
                 </li>
+
                 <li className="flex flex-col">
-                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">LOCATION</span>
-                  <span className="typ-body-md text-primary mt-1 font-semibold">Bangkok, Thailand</span>
+                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">
+                    INTERESTS
+                  </span>
+
+                  <span className="typ-body-md text-primary mt-1 font-semibold">
+                    Software Engineering, Backend Development
+                  </span>
+                </li>
+
+                <li className="flex flex-col">
+                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">
+                    CURRENT STACK
+                  </span>
+
+                  <span className="typ-body-md text-primary mt-1 font-semibold">
+                    Flutter, FastAPI, PostgreSQL
+                  </span>
+                </li>
+
+                <li className="flex flex-col">
+                  <span className="typ-label-mono text-[10px] text-on-surface-variant uppercase">
+                    LOCATION
+                  </span>
+
+                  <span className="typ-body-md text-primary mt-1 font-semibold">
+                    Pathum Thani, Thailand
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
-
         </div>
-
-        {/* View More Info Button Link */}
+        {/* CTA */}
         <div className="flex justify-center mt-12">
-          <Link href="/info">
-            <Button variant="secondary" className="px-8 py-3.5 uppercase tracking-wider text-xs font-bold font-mono">
-              VIEW_FULL_DOSSIER
+          <Link href="/about">
+            <Button
+              variant="secondary"
+              className="px-8 py-3.5 uppercase tracking-wider text-xs font-bold font-mono"
+            >
+              VIEW_FULL_PROFILE
             </Button>
           </Link>
         </div>
-
       </div>
     </section>
   );

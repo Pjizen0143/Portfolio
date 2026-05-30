@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import ConfidentialProjectModal from "@/components/shared/ConfidentialProjectModal";
 
 interface Project {
   title: string;
@@ -8,6 +9,7 @@ interface Project {
   tags: string[];
   link: string;
   category: string;
+  confidential?: boolean;
 }
 
 const PROJECTS_DATA: Project[] = [
@@ -35,6 +37,7 @@ const PROJECTS_DATA: Project[] = [
 ];
 
 export default function ProjectsPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="min-h-[calc(100vh-80px)] bg-background text-on-background px-5 py-16 sm:px-8">
       <div className="mx-auto max-w-280">
@@ -90,18 +93,32 @@ export default function ProjectsPage() {
                   ))}
                 </div>
 
-                <a 
-                  href={project.link}
-                  className="btn-secondary w-full text-center py-2"
-                >
-                  VIEW_SOURCE_CODE
-                </a>
+                {project.confidential ? (
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="btn-secondary w-full text-center py-2 cursor-pointer font-mono"
+                  >
+                    CONFIDENTIAL_PROJECT
+                  </button>
+                ) : (
+                  <a 
+                    href={project.link}
+                    className="btn-secondary w-full text-center py-2"
+                  >
+                    VIEW_SOURCE_CODE
+                  </a>
+                )}
               </div>
             </article>
           ))}
         </div>
 
       </div>
+
+      <ConfidentialProjectModal
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

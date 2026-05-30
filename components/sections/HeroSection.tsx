@@ -14,15 +14,15 @@ export default function HeroSection() {
         </div>
         
         <h1 className="typ-display text-primary leading-tight mb-2">
-          Thanaphat Poolthrap's<br />
+          Thanaphat Poolthrap&apos;s<br />
         </h1>
         <h2 className="typ-h2 text-on-surface-variant ml-2 mb-6">
           Software Engineer
         </h2>
-
         <p className="typ-body-lg text-on-background leading-relaxed max-w-2xl mb-8">
-          I am a digital architect and software builder dedicated to front-end craftsmanship. 
-          I build digital surfaces that prioritize reading rhythm, negative space, and typographic authority—relying on content over ornamentation.
+          I&apos;m a Computer Engineering student passionate about software engineering and building practical applications.
+          I enjoy turning ideas into real products and have experience developing full-stack projects.
+          Currently, I&apos;m focused on improving my backend development, system design, and problem-solving skills.
         </p>
       </div>
     </section>

@@ -12,6 +12,21 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("index");
   const pathname = usePathname();
 
+  // Custom navigation handler for smooth hash scrolling on '/'
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+      window.history.pushState(null, "", `#${sectionId}`);
+    }
+  };
+
   // Scroll Spy: Tracks active viewport section on the home page
   useEffect(() => {
     if (pathname !== "/") return;
@@ -68,7 +83,12 @@ export default function Navbar() {
         
         {/* Column 1: Left - Terminal Branding click to '/' */}
         <div className="flex-1 flex justify-start items-center">
-          <Link href="/#index" className="flex items-center gap-3 group" aria-label="Go to homepage">
+          <Link 
+            href="/#index" 
+            onClick={(e) => handleNavClick(e, "index")}
+            className="flex items-center gap-3 group" 
+            aria-label="Go to homepage"
+          >
             {/* Modular Terminal Icon & Label Component */}
             <TerminalLabel />
           </Link>
@@ -78,6 +98,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center justify-center gap-8 lg:gap-16">
           <Link 
             href="/#index" 
+            onClick={(e) => handleNavClick(e, "index")}
             className={`typ-label-mono text-xs uppercase tracking-wider relative py-1 transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all duration-300 ${
               isLinkActive("index", "/")
                 ? "text-primary font-bold after:w-full"
@@ -88,6 +109,7 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/#skills" 
+            onClick={(e) => handleNavClick(e, "skills")}
             className={`typ-label-mono text-xs uppercase tracking-wider relative py-1 transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all duration-300 ${
               isLinkActive("skills", "/")
                 ? "text-primary font-bold after:w-full"
@@ -98,6 +120,7 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/#projects" 
+            onClick={(e) => handleNavClick(e, "projects")}
             className={`typ-label-mono text-xs uppercase tracking-wider relative py-1 transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all duration-300 ${
               isLinkActive("projects", "/projects")
                 ? "text-primary font-bold after:w-full"
@@ -108,6 +131,7 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/#info" 
+            onClick={(e) => handleNavClick(e, "info")}
             className={`typ-label-mono text-xs uppercase tracking-wider relative py-1 transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all duration-300 ${
               isLinkActive("info", "/info")
                 ? "text-primary font-bold after:w-full"
@@ -168,7 +192,10 @@ export default function Navbar() {
           
           <Link 
             href="/#index" 
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              handleNavClick(e, "index");
+              setIsOpen(false);
+            }}
             className={`typ-label-mono text-sm uppercase tracking-widest py-2 border-b transition-all duration-200 ${
               isLinkActive("index", "/")
                 ? "text-primary font-bold border-primary border-b-2"
@@ -179,7 +206,10 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/#skills" 
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              handleNavClick(e, "skills");
+              setIsOpen(false);
+            }}
             className={`typ-label-mono text-sm uppercase tracking-widest py-2 border-b transition-all duration-200 ${
               isLinkActive("skills", "/skills")
                 ? "text-primary font-bold border-primary border-b-2"
@@ -190,7 +220,10 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/#projects" 
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              handleNavClick(e, "projects");
+              setIsOpen(false);
+            }}
             className={`typ-label-mono text-sm uppercase tracking-widest py-2 border-b transition-all duration-200 ${
               isLinkActive("projects", "/projects")
                 ? "text-primary font-bold border-primary border-b-2"
@@ -201,7 +234,10 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/#info" 
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              handleNavClick(e, "info");
+              setIsOpen(false);
+            }}
             className={`typ-label-mono text-sm uppercase tracking-widest py-2 border-b transition-all duration-200 ${
               isLinkActive("info", "/info")
                 ? "text-primary font-bold border-primary border-b-2"
