@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Thanaphat Poolthrap | Software Engineer Portfolio",
 
+  verification: {
+    google: "zImNcoKM6xZ69EmW77mjnY8564iZBLMlDgxGbeG3gSk",
+  },
+
   description:
     "Thanaphat Poolthrap (ธนภัทร พูลทรัพย์) is a Computer Engineering student and aspiring Software Engineer specializing in backend development. Explore projects, technical skills, and experience.",
 
