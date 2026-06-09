@@ -30,7 +30,7 @@ const skillIcons: Record<
   Python: Terminal,
   "C#": Hash,
   Dart: Target,
-  Java: Coffee,
+  TypeScript: Coffee,
   "C/C++": Braces,
   SQL: Database,
 
@@ -63,7 +63,7 @@ const skillGroups = [
     title: "Languages",
     description:
       "Programming languages I use for coursework, problem solving, and software development.",
-    skills: ["Python", "C#", "Dart", "Java", "C/C++", "SQL"],
+    skills: ["Python", "C#", "Dart", "TypeScript", "C/C++", "SQL"],
   },
   {
     icon: Server,

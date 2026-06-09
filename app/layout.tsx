@@ -15,9 +15,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Thanaphat Poolthrap - Portfolio",
+  title: "Thanaphat Poolthrap | Software Engineer Portfolio",
+
   description:
-    "Welcome to my portfolio! I'm Thanaphat Poolthrap, a Computer Engineering student with a passion for software engineering and backend development. Explore my projects, skills, and experience in the world of technology.",
+    "Thanaphat Poolthrap (ธนภัทร พูลทรัพย์) is a Computer Engineering student and aspiring Software Engineer specializing in backend development. Explore projects, technical skills, and experience.",
+
+  keywords: [
+    "Thanaphat Poolthrap",
+    "ธนภัทร พูลทรัพย์",
+    "Software Engineer",
+    "Backend Developer",
+    "Computer Engineering",
+    "Portfolio",
+    "FastAPI",
+    "Flutter",
+    "Python",
+    "C#",
+    "Web Development",
+  ],
+
+  authors: [{ name: "Thanaphat Poolthrap" }],
+  creator: "Thanaphat Poolthrap",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Thanaphat Poolthrap | Software Engineer Portfolio",
+    description:
+      "Computer Engineering student and aspiring Software Engineer specializing in backend development.",
+    url: "https://thanaphat-portfolio.vercel.app",
+    siteName: "Thanaphat Poolthrap Portfolio",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Thanaphat Poolthrap | Software Engineer Portfolio",
+    description: "Computer Engineering student and aspiring Software Engineer.",
+  },
+
+  alternates: {
+    canonical: "https://thanaphat-portfolio.vercel.app",
+  },
 };
 
 export default function RootLayout({
